@@ -1,0 +1,28 @@
+body {
+    background-color: #556270;
+}
+
+table td { vertical-align: middle; }
+table td img { height: 60px; }
+
+table td a, table td a:hover, 
+table td a:active, table td a:visited { 
+    color: #fff; 
+}
+
+.row-title { margin-top: 10px; }
+.row-title .col-10 { padding: 0; }
+.row-title h1.title { 
+    background-color: #C44D58; 
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.table-container {
+    background-color: #a4b2c1;
+    padding: 0;
+}
+.table-container table { margin: 0; }
+
+
+.small-indication { font-size: 12px; }

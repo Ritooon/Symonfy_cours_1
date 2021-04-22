@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personnage{% endblock %}
+
+{% block titrePage %}Personnage : {{personnage.nom|capitalize}}{% endblock %}
+
+
+{% block body %}
+    <div class="row justify-content-md-center">
+        <div class="col-10 bg-white">
+            <div class="row">
+                <div class="col-2">
+                    <img src="{{ asset('images/personnages/' ~ personnage.nom ~ '.png') }}" />
+                </div>
+        
+                <div class="col">
+                    <h2>
+                        {{personnage.nom|capitalize}}
+
+                        <span class="small-indication">
+                            ({% if personnage.sexe == 'M' %} Homme {% elseif personnage.sexe == 'F' %} Femme {% else %} N/A {% endif %})
+                        </span>
+                    </h2>
+        
+                    
+                    
+                    <h3>Caractéristiques</h3>
+                    <p>&#128170; Force : {{personnage.caracteristiques.force}}</p>
+                    <p>&#128406; Agilité : {{personnage.caracteristiques.agil}}</p>
+                    <p>&#129504; Intelligence : {{personnage.caracteristiques.intel}}</p>                    
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

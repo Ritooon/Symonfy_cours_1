@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Arme : {{arme.libelle|capitalize}}{% endblock %}
+
+{% block titrePage %}Arme : {{arme.libelle|capitalize}}{% endblock %}
+
+
+{% block body %}
+    <div class="row justify-content-md-center">
+        <div class="col-10 bg-white">
+            <div class="row">
+                <div class="col-2">
+                    <img src="{{ asset('images/armes/' ~ arme.libelle|replace({'é':'e'}) ~ '.png') }}" />
+                </div>
+        
+                <div class="col">
+                    <h2>{{arme.libelle|capitalize}}</h2>
+
+                    <p>
+                        &#9876; <strong>Dégats : </strong>{{arme.degats}}
+                    </p>  
+
+                    <p>
+                        &#128214; <strong>Descritpion : </strong>{{arme.description}}
+                    </p>           
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

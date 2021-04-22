@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personnagess{% endblock %}
+
+{% block titrePage %}Liste des personnages{% endblock %}
+
+
+{% block body %}
+    <div class="row justify-content-md-center">
+        <div class="col-10 table-container">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Image</th>
+                        <th>Nom</th>
+                        <th>Age</th>
+                        <th>Sexe</th>
+                        <th>Force</th>
+                        <th>Agilité</th>
+                        <th>Intelligence</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for personnage in personnages %}
+                        <tr>
+                            <td class="text-center">
+                                <img src="{{ asset('images/personnages/' ~ personnage.nom ~ '.png') }}" />
+                            </td>
+                            <td><a href="{{ path('afficher_personnage', {'nom': personnage.nom}) }}">{{personnage.nom|capitalize}}</a></td>
+                            <td>{{personnage.age}}</td>
+                            <td>
+                                {% if personnage.sexe == 'M' %} Homme {% elseif personnage.sexe == 'F' %} Femme {% else %} N/A {% endif %}
+                            </td>
+                            <td>{{personnage.caracteristiques.force}}</td>
+                            <td>{{personnage.caracteristiques.agil}}</td>
+                            <td>{{personnage.caracteristiques.intel}}</td>
+                        </tr>
+                        <div></div>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
